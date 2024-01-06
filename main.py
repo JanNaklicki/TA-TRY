@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 import subprocess
 from src.graphmodule import GraphClass as Graph
-from src.XmlModule.xmlclass import XmlClass as Xml
+from src.xmlmodule.xmlclass import XmlClass as Xml
 
 app = Flask(__name__)
 xml_file = "./data/raw/dataWaypoints.xml"

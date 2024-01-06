@@ -1,6 +1,5 @@
 import matplotlib.pyplot as plt
 
-
 import networkx as nx
 
 
@@ -25,7 +24,6 @@ class GraphClass:
         # prepare graph
         self.graph = nx.Graph()
         self.labels = labels
-        # self.graph.add_weighted_edges_from(adjacency_list)
 
         for node_id, coords in nodes.items():
             self.graph.add_node(node_id, pos=coords)
@@ -42,7 +40,6 @@ class GraphClass:
 
     def get_neighbors(self, v):
         return list(self.graph.edges(v, data=True))
-
 
     def a_star_algorithm(self, start_node, stop_node):
         open_list = {start_node}
@@ -125,8 +122,10 @@ class GraphClass:
         nx.draw(self.graph, pos, with_labels=False, node_size=self.__base_node_size, node_color=self.__base_node_color)
 
         # waypoints
-        waypoint_nodes = [node for node, data in self.graph.nodes(data=True) if 'type' in data and data['type'] == 'waypoint']
-        nx.draw_networkx_nodes(self.graph, pos, nodelist=waypoint_nodes, node_size=self.__peaks_node_size, node_color=self.__peaks_node_color)
+        waypoint_nodes = [node for node, data in self.graph.nodes(data=True) if
+                          'type' in data and data['type'] == 'waypoint']
+        nx.draw_networkx_nodes(self.graph, pos, nodelist=waypoint_nodes, node_size=self.__peaks_node_size,
+                               node_color=self.__peaks_node_color)
         # labels
         labels = {node: self.labels[node] for node in waypoint_nodes}
         labelsOnGraph = nx.draw_networkx_labels(self.graph, pos, labels=labels, font_size=self.__label_font_size)
@@ -150,12 +149,15 @@ class GraphClass:
         nx.draw(self.graph, pos, with_labels=False, node_size=self.__base_node_size, node_color=self.__base_node_color)
 
         # path on top of the graph
-        nx.draw_networkx_nodes(self.graph, pos, nodelist=path, node_color=self.__path_node_color, node_size=self.__path_node_size)
+        nx.draw_networkx_nodes(self.graph, pos, nodelist=path, node_color=self.__path_node_color,
+                               node_size=self.__path_node_size)
         nx.draw_networkx_edges(self.graph, pos, edgelist=list(zip(path, path[1:])), edge_color='#FF521B', width=2)
 
         # waypoints
-        waypoint_nodes = [node for node, data in self.graph.nodes(data=True) if 'type' in data and data['type'] == 'waypoint']
-        nx.draw_networkx_nodes(self.graph, pos, nodelist=waypoint_nodes, node_size=500, node_color=self.__peaks_node_color)
+        waypoint_nodes = [node for node, data in self.graph.nodes(data=True) if
+                          'type' in data and data['type'] == 'waypoint']
+        nx.draw_networkx_nodes(self.graph, pos, nodelist=waypoint_nodes, node_size=500,
+                               node_color=self.__peaks_node_color)
 
         # labels
         labels = {node: self.labels[node] for node in waypoint_nodes}
@@ -163,7 +165,7 @@ class GraphClass:
         for _, t in labelsOnGraph.items():
             t.set_rotation(45)
 
-        plt.xlim(19.822898, 20.091935,)
+        plt.xlim(19.822898, 20.091935, )
         plt.ylim(49.178465, 49.276765)
         plt.savefig('./static/map.svg', format='svg', bbox_inches='tight')
         plt.close()

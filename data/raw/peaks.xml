@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="Overpass API 0.7.61.5 4133829e">
+<note>The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.</note>
+<meta osm_base="2024-01-05T02:42:14Z"/>
+
+  <node id="3552158247" lat="49.2318014" lon="19.9815609">
+    <tag k="ele" v="1987"/>
+    <tag k="name" v="Kasprov vrch / Kasprowy Wierch"/>
+    <tag k="name:hu" v="Gáspár-csúcs"/>
+    <tag k="name:pl" v="Kasprowy Wierch"/>
+    <tag k="name:sk" v="Kasprov vrch"/>
+    <tag k="natural" v="peak"/>
+    <tag k="old_name:pl" v="Kasprowa Czuba;Stawiańska Czuba;Goryczkowiańska Czuba"/>
+    <tag k="prominence" v="37"/>
+    <tag k="ref:prng" v="51250"/>
+    <tag k="summit:cross" v="no"/>
+    <tag k="wikidata" v="Q1735189"/>
+    <tag k="wikipedia" v="pl:Kasprowy Wierch"/>
+  </node>
+  <node id="3634545832" lat="49.2323564" lon="19.9816601">
+    <tag k="ele" v="1988"/>
+    <tag k="information" v="guidepost"/>
+    <tag k="name" v="Kasprowy Wierch"/>
+    <tag k="opening_hours" v="24/7"/>
+    <tag k="tourism" v="information"/>
+  </node>
+  <node id="3634545834" lat="49.2309684" lon="19.9830819">
+    <tag k="ele" v="1950"/>
+    <tag k="information" v="guidepost"/>
+    <tag k="name" v="Sucha Przełęcz"/>
+    <tag k="opening_hours" v="24/7"/>
+    <tag k="source" v="survey, GPS"/>
+    <tag k="tourism" v="information"/>
+  </node>
+  <node id="7838666850" lat="49.2313220" lon="19.9805152">
+    <tag k="hiking" v="yes"/>
+    <tag k="information" v="guidepost"/>
+    <tag k="source" v="survey, GPS"/>
+    <tag k="tourism" v="information"/>
+  </node>
+
+</osm>

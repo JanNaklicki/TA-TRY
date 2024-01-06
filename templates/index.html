@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="/static/favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lose Your Way</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif; /* Use the specified font */
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            padding: 15px;
+            text-align: center;
+            color: white;
+            font-size: 24px;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+
+        #map {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        button:disabled {
+            background-color: #dddddd; /* Light gray background for disabled buttons */
+            color: #888888; /* Gray text color for disabled buttons */
+            cursor: not-allowed; /* Change cursor to 'not-allowed' for disabled buttons */
+        }
+
+        .map {
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    Find Your Way
+</header>
+
+<main>
+    <div class="map">
+        <img id="map" src="/static/map.svg" alt="Map">
+    </div>
+
+    <div class="button-container">
+        <button id="btn1" onclick="runPythonScript(0)">Example 1</button>
+        <button id="btn2" onclick="runPythonScript(1)">Example 2</button>
+        <button id="btn3" onclick="runPythonScript(2)">Example 3</button>
+    </div>
+</main>
+<script>
+    function runPythonScript(exampleNumber) {
+        disableButtons()
+        fetch(`/runcode/${exampleNumber}`)
+            .then(response => response.text())
+            .then(data => {
+                console.log('Data changed')
+                location.reload()
+            });
+    }
+     function disableButtons() {
+        document.getElementById('btn1').disabled = true;
+        document.getElementById('btn2').disabled = true;
+        document.getElementById('btn3').disabled = true;
+    }
+</script>
+
+</body>
+</html>

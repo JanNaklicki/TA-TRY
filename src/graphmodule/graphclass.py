@@ -101,7 +101,7 @@ class GraphClass:
             print('Start or stop node not in the graph!')
             return None
 
-        path = nx.astar_path(self.graph, start_node, stop_node, heuristic=lambda n, goal: self.h(n, goal),
+        path = nx.astar_path(self.graph, start_node, stop_node, heuristic=lambda n, goal: self.h(n),
                              weight='weight')
 
         if not path:
